@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>じぶんのトリセツ</title>
+    <meta name="description" content="ADHD・ASDの中学生・高校生向け。学校・勉強・友達・生活を少し楽にするヒントを紹介します。">
+    <!-- Google Font & Icons (デザイン再現のために追加) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<header class="site-header">
+<div class="container header-inner">
+<a href="index.html" class="logo">
+<span class="logo-main">じぶんのトリセツ</span>
+<span class="logo-sub">Know Yourself.</span>
+</a>
+<button class="menu-trigger"aria-label="メニューを開く"> <span></span><span></span><span></span>  
+</button>
+</div>
+</header>
+<main>
+<!-- HERO SECTION -->
+<section class="hero">
+ <div class="hero-scroll">SCROLL</div>
+ <div class="hero-vertical-text">SELF MANUAL,</div>
+ <div class="container hero-inner">
+ <div class="hero-text">
+  <h1>自分を知ると、<br>少し楽になる。</h1>
+  <p class="hero-description">
+      ADHD・ASDの特性を知って、<br> 自分に合う方法を見つけるためのサイト </p>
+<a href="#news" class="button hero-button">
+  記事を探す
+  <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+ </div>
+ <div class="hero-visual">
+  <img src="images/hero-illustration.png" alt="メインビジュアルイラスト" class="hero-img">
+             </div>
+         </div>
+     </section>
+
+     <!-- 新着記事 SECTION -->
+<section id="news" class="section">
+    <div class="container">
+
+        <div class="section-header">
+            <h2 class="section-title">新着記事</h2>
+        </div>
+        <div class="cardGrid" id="newsList">
+
+            <!--
+            JSで動的生成する場合は、生成されるHTML構造を以下に合わせるように script.js を調整してください。
+            以下は静的に再現する場合のサンプルコードです。
+            -->
+     <article class="post-card">
+         <div class="post-card-img">
+             <img src="images/post-adhd.png" alt="ADHDってどんな特性？">
+                        </div>
+                        <div class="post-card-body">
+                            <span class="post-category">ADHD</span>
+                            <h3 class="post-title">ADHDってどんな特性？</h3>
+                            <p class="post-text">忘れ物や集中できない理由をわかりやすく解説します。</p>
+                            <div class="post-arrow">
+                                <span class="material-symbols-outlined">arrow_forward</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="post-card">
+                        <div class="post-card-img">
+                            <img src="images/post-school.png" alt="忘れ物が多いあなたのトリセツ">
+                        </div>
+                        <div class="post-card-body">
+                            <span class="post-category">学校</span>
+                            <h3 class="post-title">忘れ物が多いあなたのトリセツ</h3>
+                            <p class="post-text">忘れ物を仕組みで減らす方法を紹介します。</p>
+                            <div class="post-arrow">
+                                <span class="material-symbols-outlined">arrow_forward</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="post-card">
+                        <div class="post-card-img">
+                            <img src="images/post-study.png" alt="宿題が始められないあなたへ">
+                        </div>
+                        <div class="post-card-body">
+                            <span class="post-category">勉強</span>
+                            <h3 class="post-title">宿題が始められないあなたへ</h3>
+                            <p class="post-text">最初の5分を乗り切るコツを紹介します。</p>
+                            <div class="post-arrow">
+                                <span class="material-symbols-outlined">arrow_forward</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CATEGORY SECTION -->
+        <section id="categories" class="section">
+            <div class="container">
+                <div class="section-header-border">
+                    <h2 class="section-title-sub">CATEGORY</h2>
+                </div>
+
+                <div class="category-panel-grid">
+                    <a class="category-panel-item" href="category.html?category=ADHD" data-category="ADHD" style="background-image: url('images/cat-adhd.jpg');">
+                        <div class="category-panel-content">
+                            <h3>ADHD</h3>
+                            <p>エイディーエイチディー</p>
+                        </div>
+                    </a>
+                    <a class="category-panel-item" href="category.html?category=ASD" data-category="ASD" style="background-image: url('images/cat-asd.jpg');">
+                        <div class="category-panel-content">
+                            <h3>ASD</h3>
+                            <p>エーエスディー</p>
+                        </div>
+                    </a>
+                    <a class="category-panel-item" href="category.html?category=学校" data-category="学校" style="background-image: url('images/cat-school.jpg');">
+                        <div class="category-panel-content">
+                            <h3>学校生活</h3>
+                            <p>がっこうせいかつ</p>
+                        </div>
+                    </a>
+                    <a class="category-panel-item" href="category.html?category=友達" data-category="友達" style="background-image: url('images/cat-friends.jpg');">
+                        <div class="category-panel-content">
+                            <h3>友達関係</h3>
+                            <p>ともだちかんけい</p>
+                        </div>
+                    </a>
+                    <a class="category-panel-item" href="category.html?category=生活" data-category="生活" style="background-image: url('images/cat-life.jpg');">
+                        <div class="category-panel-content">
+                            <h3>生活のこと</h3>
+                            <p>せいかつのこと</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 困りごとから探す SECTION -->
+        <section id="troubles" class="section">
+            <div class="container">
+                <div class="section-header-border">
+                    <h2 class="section-title-sub">困りごとから探す</h2>
+                </div>
+
+                <div class="trouble-grid">
+                    <a class="trouble-item" href="category.html?category=忘れ物">
+                        <div class="trouble-icon">
+                            <!-- Google Material Icons を使用して画像を代替、または自前のsvg画像に置き換えてください -->
+                            <span class="material-symbols-outlined">shopping_bag</span>
+                        </div>
+                        <p>忘れ物</p>
+                    </a>
+                    <a class="trouble-item" href="category.html?category=集中できない">
+                        <div class="trouble-icon">
+                            <span class="material-symbols-outlined">track_changes</span>
+                        </div>
+                        <p>集中できない</p>
+                    </a>
+                    <a class="trouble-item" href="category.html?category=学校">
+                        <div class="trouble-icon">
+                            <span class="material-symbols-outlined">apartment</span>
+                        </div>
+                        <p>学校生活</p>
+                    </a>
+                    <a class="trouble-item" href="category.html?category=友達">
+                        <div class="trouble-icon">
+                            <span class="material-symbols-outlined">groups</span>
+                        </div>
+                        <p>友達</p>
+                    </a>
+                    <a class="trouble-item" href="category.html?category=勉強">
+                        <div class="trouble-icon">
+                            <span class="material-symbols-outlined">edit</span>
+                        </div>
+                        <p>宿題</p>
+                    </a>
+                    <a class="trouble-item" href="category.html?category=生活リズム">
+                        <div class="trouble-icon">
+                            <span class="material-symbols-outlined">alarm</span>
+                        </div>
+                        <p>朝起きられない</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+
+<!-- 記事を探す (SEARCH AREA) -->
+<section id="search" class="section searchArea">
+    <div class="container">
+    
+        <div class="section-header-border">
+            <h2 class="section-title-sub">記事を探す</h2>
+        </div>
+        
+        <!-- 検索入力エリア（ID追加済み） -->
+        <div class="search-input-wrapper">
+            <span id="searchBtn" class="material-symbols-outlined search-input-icon" style="cursor: pointer;">search</span>
+            <input type="text" id="searchInput" placeholder="キーワードで検索">
+        </div>
+
+        <!-- 検索結果を表示するエリア（新規追加） -->
+        <div id="searchResults" style="margin-top: 20px;"></div>
+    </div>
+</section>
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2026 じぶんのトリセツ</p>
+        </div>
+    </footer>
+
+    <!-- Drawer Menu -->
+<nav id="drawerMenu" class="drawer-menu">
+
+    <a href="index.html">HOME</a>
+
+    <a href="#news">新着記事</a>
+
+    <a href="#categories">カテゴリ</a>
+
+    <a href="#troubles">困りごとから探す</a>
+
+    <a href="#search">記事を探す</a>
+
+</nav>
+
+
+    <script src="./js/articles.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
