@@ -1,0 +1,986 @@
+/* ==========================================================================
+   Reset & Base Styles
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans JP', "Helvetica Neue", Arial, sans-serif;
+  color: #2c2c2c;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* ==========================================================================
+   Layout Containers
+   ========================================================================== */
+.container, main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.section {
+  padding: 60px 0;
+}
+/* ==========================================================================
+   Header Styles (ロゴ左端・メニュー右端・左右余白の完全再現)
+   ========================================================================== */
+.site-header,
+body > header {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 30px 0 !important; /* 上下にゆったりとした余白を確保 */
+  display: block !important;
+}
+
+/* ヘッダー内部のコンテナ（左右の余白を保ちつつ、両端に割り振る心臓部） */
+.header-inner,
+body > header > div {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px; /* 左右に十分な余白をキープ */
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important; /* ロゴを左端、ボタンを右端へ */
+  align-items: center !important; /* 縦方向の中央揃え */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ロゴ全体のエリア */
+.logo,
+.header-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* メインロゴ：じぶんのトリセツ */
+.logo-main,
+body > header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #111111;
+  line-height: 1.2;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* サブロゴ：Know Yourself. */
+.logo-sub,
+body > header p {
+  font-size: 11px;
+  color: #888888;
+  margin: 6px 0 0 0 !important;
+  padding: 0 !important;
+  letter-spacing: 0.05em;
+  font-weight: normal;
+}
+
+/* 右端のハンバーガーメニュー（三本線） */
+.menu-trigger {
+  background: none;
+  border: none;
+  width: 28px;
+  height: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 0;
+  margin: 0 0 0 auto; /* 右端に強制的に寄せる */
+  z-index: 100;
+}
+
+.menu-trigger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #888;
+  transition: all 0.3s;
+}
+/* ==========================================================================
+   Drawer Menu
+   ========================================================================== */
+
+.drawer-menu{
+
+    position:fixed;
+
+    top:30px;
+
+    right:-320px;
+
+    width:260px;
+
+    height:auto;
+
+    background:#fff;
+
+    border-radius:12px 0 0 12px;
+
+    box-shadow:-4px 8px 20px rgba(0,0,0,.08);
+
+    padding:24px 24px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    transition:right .3s ease;
+
+    z-index:999;
+
+}
+
+.drawer-menu.open{
+  right:0;
+}
+
+.drawer-menu a{
+
+  color:#333;
+
+  text-decoration:none;
+
+  font-size:16px;
+
+  font-weight:500;
+
+  padding-bottom:10px;
+
+  border-bottom:1px solid #ececec;
+
+}
+
+.drawer-menu a:hover{
+
+  color:#6b8fb8;
+
+}
+
+/* ==========================================================================
+   Responsive Utilities (スマホ表示でのヘッダー余白調整)
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* スマホの画面幅では、左右の余白を「24px」にして程よいバランスにします */
+  .header-inner,
+  body > header > div {
+    padding: 0 24px !important;
+  }
+}
+
+/* ==========================================================================
+   Responsive Utilities (スマホ表示でのヘッダー余白調整)
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* スマホ画面の時は、余白を少しだけタイト（左右24px）にしてバランスを取ります */
+  .site-header,
+  body > header {
+    padding: 24px 24px !important;
+  }
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero {
+  position: relative;
+  background-color: #ffffff;
+  overflow: hidden;
+  padding: 60px 0 120px 0; /* 下部（SCROLLが収まるエリア）の余白を多めに確保 */
+}
+
+.hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px; /* ヘッダーの横位置(60px)と完全一致させます */
+}
+
+/* テキストエリアの横幅を調整し、左側の装飾スペースを確保 */
+.hero-text {
+  flex: 0 0 50%;
+  z-index: 10;
+  padding-left: 40px; /* 左側に40pxの余白を作り、SCROLL文字と絶対に重ならないようにガードします */
+  padding-right: 20px;
+}
+
+.hero-text h1 {
+  font-size: clamp(32px, 4vw, 50px);
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 0 0 24px 0;
+  color: #111111;
+  letter-spacing: 0.05em;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.hero-description {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #333333;
+  margin: 0 0 40px 0;
+  font-weight: 500;
+}
+
+.hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #222222;
+  color: #ffffff;
+  padding: 16px 24px;
+  font-size: 15px;
+  font-weight: 700;
+  width: 240px;
+  border-radius: 2px;
+}
+
+.hero-visual {
+  flex: 0 0 48%;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-img {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  display: block;
+}
+
+.hero-img[alt] {
+  text-indent: -9999px;
+}
+
+/* ==========================================================================
+   Hero Section Decor (装飾テキストの重なり防止・完全配置)
+   ========================================================================== */
+/* PC表示時：ボタンや文字の「完全な外側（左余白部分）」に配置して重なりをゼロに */
+.hero-scroll {
+  position: absolute;
+  left: 60px; /* ロゴ・ヘッダーの左端ラインと完璧に縦並び */
+  bottom: 0px; /* ヒーローエリアの最下部にピタッと配置 */
+  writing-mode: vertical-rl;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: #aaaaaa;
+  text-transform: uppercase;
+　display: flex !important;
+  align-items: center;
+  gap: 12px;
+  z-index: 5;
+}
+
+.hero-scroll::after {
+  content: "";
+  display: block !important;
+  width: 1px;
+  height: 60px;
+  background-color: #dddddd;
+}
+
+/* 右側の縦書きテキスト（こちらも重ならないよう調整） */
+.hero-vertical-text {
+  position: absolute;
+  right: 60px; /* ヘッダーの右端ラインに合わせる */
+  top: 40px;
+  writing-mode: vertical-rl;
+  font-size: 13px;
+  letter-spacing: 0.25em;
+  color: #aaaaaa;
+  z-index: 5;
+}
+
+/* ==========================================================================
+   Section Headers
+   ========================================================================== */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 30px;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  position: relative;
+  padding-left: 14px;
+  margin: 0;
+}
+
+.section-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 15%;
+  width: 4px;
+  height: 70%;
+  background-color: #888888;
+}
+
+.view-all {
+  font-size: 13px;
+  font-weight: 500;
+  color: #333333;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.section-header-border {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.section-title-sub {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin: 0 20px 0 0;
+  white-space: nowrap;
+}
+
+.section-header-border::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: #dddddd;
+}
+
+/* ==========================================================================
+   Grids
+   ========================================================================== */
+/* 新着記事カード */
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.post-card {
+  background-color: #ffffff;
+  border-radius: 6px;
+  border: 1px solid #f0f0f0;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+}
+
+.post-card-img img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.post-card-body {
+  padding: 24px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* カテゴリーパネル */
+.category-panel-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.category-panel-item {
+  position: relative;
+  height: 200px;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #e0e6ed;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+}
+
+.category-panel-item::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.6) 100%);
+  z-index: 1;
+}
+
+.category-panel-content {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  color: #ffffff;
+}
+
+/* 困りごと一覧 */
+.trouble-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+}
+
+.trouble-item {
+  background-color: #fcfcfc;
+  border: 1px solid #f3f3f3;
+  border-radius: 6px;
+  padding: 30px 10px;
+  text-align: center;
+}
+
+.trouble-icon .material-symbols-outlined {
+  font-size: 32px;
+  color: #333333;
+}
+
+/* 検索窓 */
+.search-input-wrapper input {
+  width: 100%;
+  padding: 14px 16px 14px 48px;
+  font-size: 15px;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+}
+
+/* ==========================================================================
+   Article Pages (記事用)
+   ========================================================================== */
+main > article {
+  max-width: 800px;
+  margin: 60px auto 100px auto;
+}
+
+main > article > h1 {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #111111;
+  margin: 0 0 40px 0;
+  letter-spacing: 0.03em;
+}
+
+main > article p {
+  font-size: 16px;
+  line-height: 1.9;
+  color: #2c2c2c;
+  margin: 0 0 28px 0;
+}
+
+main > article h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111111;
+  margin: 56px 0 24px 0;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #333333;
+}
+
+main > article h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111111;
+  margin: 40px 0 16px 0;
+  padding-left: 12px;
+  border-left: 4px solid #888888;
+}
+
+main > article ul {
+  margin: 0 0 32px 0;
+  padding-left: 20px;
+}
+
+main > article ul li {
+  list-style-type: disc;
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: #2c2c2c;
+}
+
+main > article > .articlePager {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: none;
+}
+
+main > article > footer {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: none;
+}
+
+main > article > footer hr {
+  border: none;
+  border-top: 1px solid #eeeeee;
+  margin-bottom: 5px;
+}
+
+.reference p {
+  font-size: 10px;
+  color: #8b8b8b;
+  line-height: 1.6;
+  margin-top: 12px;
+}
+
+
+#searchResults {
+    min-height: 50px; /* 高さがつぶれないようにする */
+    margin-top: 10px;
+}
+
+
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.site-footer,
+body > footer {
+  text-align: center;
+  padding: 40px 0;
+  font-size: 10px;
+  color: #888888;
+  border-top: 1px solid #f0f0f0;
+}
+
+/* ==========================================================================
+   Responsive Utilities (スマホ表示用設定の強化)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .container, main {
+    padding: 0 24px;
+  }
+  body > header {
+    padding: 24px 24px;
+  }
+  .cardGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* ==========================================================================
+   Responsive Utilities (スマホ表示での特別なレイアウト調整)
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* スマホのヘッダー余白を24pxでキープ */
+  .header-inner,
+  body > header > div {
+    padding: 0 24px !important;
+  }
+
+  /* ヒーローエリア全体の高さと余白の調整 */
+  .hero {
+    padding: 30px 0 80px 0; /* 上下の余白を詰めて無駄な隙間を解消 */
+  }
+
+  /* ヒーローの内側：横幅いっぱいに広げ、縦書き文字の逃げ道を確保 */
+  .hero-inner {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 24px !important; /* 左右に24pxの余白 */
+    position: relative;
+    min-height: 340px; /* 余分な高さを削り、全体をコンパクトに凝縮 */
+  }
+  
+  /* 左寄せのヒーローテキスト（サイズを大きくし、横幅の制限を緩めて隙間を減らす） */
+  .hero-text {
+    flex: 0 0 80% !important; /* 横幅を80%まで広げて、文字をしっかり大きく表示 */
+    padding-right: 0;
+    margin-bottom: 0;
+    text-align: left !important;
+    z-index: 10; /* 画像より確実に手前に重ねる */
+  }
+  
+  /* スマホ用の文字サイズを大きく見やすく調整 */
+  .hero-text h1 {
+    font-size: 34px !important; /* 小さくなっていたタイトルを大きく戻す */
+    line-height: 1.3;
+    margin-bottom: 12px;
+    text-align: left;
+  }
+  
+  .hero-description {
+    font-size: 14px;
+    margin-bottom: 24px;
+    text-align: left;
+    max-width: 90%; /* 説明文が右に広がりすぎないように制限 */
+  }
+
+  /* 記事を探すボタン */
+  .hero-button {
+    width: 200px;
+    padding: 14px 20px;
+    font-size: 14px;
+  }
+  
+  /* 右側に大きく配置し、左に突き出させてボタンに重ねる */
+  .hero-visual {
+    display: flex !important;
+    position: absolute;
+    right: 40px; /* ★右端の縦書き「SGLT MANUAL,」(right: 24px付近)と重ならないように左へ避ける */
+    top: 10px;
+    width: 50%;  /* ★画像を小さくせず、しっかり主張するサイズに拡大 */
+    max-width: 260px;
+    z-index: 1;  /* 文字とボタンの後ろに回り込ませる */
+    opacity: 0.9; /* 色もしっかり見せる */
+    pointer-events: none; /* 重なってもボタンが押せるようにする */
+  }
+  
+  .hero-img {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* スマホ表示時も縦書き文字を表示（ただし右端24pxの位置にきれいに固定） */
+  .hero-vertical-text {
+    display: block !important;
+    position: absolute;
+    right: 20px; /* 画面右端の余白にぴったり収める */
+    top: 20px;
+    font-size: 11px;
+    color: #cccccc; /* 画像の邪魔をしないように少し淡いグレーに */
+    z-index: 5;
+  }
+
+  /* スマホ時のSCROLL（左端に綺麗に並べる） */
+  .hero-scroll {
+    display: flex !important;
+    left: 24px;
+    bottom: -20px;
+  }
+  
+  /* 各種グリッドをスマホ用に最適化 */
+  .cardGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .category-panel-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .trouble-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
+
+/*アイキャッチ*/
+
+.articleHero{
+
+margin:28px 0 36px;
+
+}
+
+.articleHero img{
+
+width:100%;
+
+display:block;
+
+border-radius:18px;
+
+}
+
+/*文末画像*/
+
+.articleEndingImage{
+
+margin:56px 0;
+
+}
+
+.articleEndingImage img{
+
+width:100%;
+
+display:block;
+
+border-radius:18px;
+
+}
+/*おすすめ記事*/
+.recommendArticles{
+
+margin-top:72px;
+
+padding-top:40px;
+
+border-top:1px solid #e7e7e7;
+
+}
+
+.recommendGrid{
+
+display:grid;
+
+gap:18px;
+
+}
+
+.recommendGrid a{
+
+display:block;
+
+padding:20px;
+
+border:1px solid #e8e8e8;
+
+border-radius:16px;
+
+text-decoration:none;
+
+color:inherit;
+
+transition:.2s;
+
+}
+
+.recommendGrid a:hover{
+
+transform:translateY(-2px);
+
+box-shadow:0 8px 24px rgba(0,0,0,.08);
+
+}
+
+/*前後記事*/
+.articlePager{
+
+display:flex;
+
+justify-content:space-between;
+
+gap:24px;
+
+margin-top:48px;
+
+}
+
+.articlePager a{
+
+flex:1;
+
+padding:20px;
+
+border:1px solid #e8e8e8;
+
+border-radius:16px;
+
+text-decoration:none;
+
+color:inherit;
+
+}
+
+.articlePager span{
+
+display:block;
+
+font-size:13px;
+
+color:#888;
+
+margin-bottom:8px;
+
+}
+/*==========================================
+ARTICLE LAYOUT
+==========================================*/
+
+.articleLayout{
+
+max-width:1200px;
+
+margin:0 auto;
+
+padding:64px 24px;
+
+display:grid;
+
+grid-template-columns:minmax(0,1fr) 320px;
+
+gap:64px;
+
+align-items:start;
+
+}
+
+
+
+.articleMain{
+
+min-width:0;
+
+}
+
+
+
+.articleSidebar{
+
+position:sticky;
+
+top:110px;
+
+}
+.articleSidebar h2{
+
+font-size:18px;
+
+margin-bottom:20px;
+
+}
+
+
+
+.recommendList{
+
+display:grid;
+
+gap:16px;
+
+}
+
+
+
+.recommendCard{
+
+display:block;
+
+padding:20px;
+
+border:1px solid #ececec;
+
+border-radius:18px;
+
+text-decoration:none;
+
+color:inherit;
+
+transition:.25s;
+
+background:#fff;
+
+}
+
+
+
+.recommendCard:hover{
+
+transform:translateY(-2px);
+
+box-shadow:0 12px 28px rgba(0,0,0,.08);
+
+}
+
+
+
+.recommendCategory{
+
+font-size:12px;
+
+color:#4b67d1;
+
+margin-bottom:8px;
+
+}
+
+
+
+.recommendTitle{
+
+font-size:16px;
+
+font-weight:700;
+
+line-height:1.5;
+
+margin-bottom:8px;
+
+}
+
+
+
+.recommendDescription{
+
+font-size:14px;
+
+line-height:1.7;
+
+color:#666;
+
+}
+@media (max-width:900px){
+
+.articleLayout{
+
+grid-template-columns:1fr;
+
+gap:56px;
+
+}
+
+.articleSidebar{
+
+position:static;
+
+}
+
+}
+
+/* -----------------------------
+   Category Page
+------------------------------*/
+
+.category-title{
+    margin-top:20px;
+    font-size:36px;
+    font-weight:700;
+    text-align:center;
+}
+
+.category-description{
+    margin-top:12px;
+    text-align:center;
+    color:#777;
+    letter-spacing:.08em;
+    margin-bottom:48px;
+}
+.emptyMessage{
+
+    text-align:center;
+    color:#777;
+    padding:80px 0;
+
+}
