@@ -244,7 +244,7 @@ const articles = [
     },
     {
         id: "adhd-023",
-        category: "ADHD,忘れ物",
+        category: ["ADHD,忘れ物"],
         title: "約束を忘れてしまう？「予定を守る仕組み」のトリセツ",
         description: "スケジュールのダブルブッキングやうっかり忘れを防ぐ",
         date: "2026-06-21",
