@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://takara-boop.github.io/nozomi-support/sitemap.xml
+
+
+
