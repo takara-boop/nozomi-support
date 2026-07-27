@@ -28,7 +28,7 @@ const articles = [
         title: "ADHDってどんな特性？",
         description: "忘れ物や集中できない理由をわかりやすく解説します。",
         image: "images/post-adhd.png",
-        date: "2026-07-15",
+        date: "2026-07-27",
         url: "articles/adhd/adhd-001.html",
         published:true
     },
@@ -37,7 +37,7 @@ const articles = [
         category:["学校","ADHD"],
         title: "忘れ物が多いあなたのトリセツ",
         description: "忘れ物を仕組みで減らす方法を紹介します。",
-        date: "2026-07-20",
+        date: "2026-07-27",
         image: "images/post-school.png",
         url: "articles/adhd/adhd-002.html",
         published:true
