@@ -1060,7 +1060,7 @@ main{
 
 .cardGrid{
     grid-template-columns:1fr;
-    width:94%;
+    width:90%;
     gap:12px;
     margin:0 auto;
 }
