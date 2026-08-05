@@ -47,7 +47,7 @@ const articles = [
         category: ["勉強","ADHD"],
         title: "宿題が始められないあなたへ",
         description: "最初の5分を乗り切るコツを紹介します。",
-        date: "2026-07-20",
+        date: "2026-07-27",
         image: "images/post-study.png",
         url: "articles/adhd/adhd-003.html",
         published:true
@@ -57,7 +57,7 @@ const articles = [
         category:["ADHD","生活","忘れ物"],
         title: "片付けられないあなたのトリセツ",
         description: "散らかる理由を知って、仕組みで解決する",
-        date: "2026-07-10",
+        date: "2026-08-05",
         image: "images/post-adhd.png",
         url: "articles/adhd/adhd-004.html",
         published:true
@@ -67,7 +67,7 @@ const articles = [
         category:["ADHD","生活"],
         title: "気持ちの切り替えが苦手なあなたのトリセツ",
         description: "頭では分かっているのに動けない時の工夫",
-        date: "2026-07-09",
+        date: "2026-08-05",
         image: "images/post-adhd.png",
         url: "articles/adhd/adhd-005.html",
         published:true
@@ -77,7 +77,7 @@ const articles = [
         category:["ADHD","生活"],
         title: "時間を忘れてしまうのは なぜ？",
         description: "ADHDの人が時間を忘れやすい理由と、時間管理のコツを紹介します。",
-        date: "2026-07-08",
+        date: "2026-08-05",
         image: "images/post-adhd.png",
         url: "articles/adhd/adhd-006.html",
         published:true
@@ -87,7 +87,7 @@ const articles = [
         category:["ADHD","生活"],
         title: "やることが多いと 動けないのはなぜ？",
         description: "やることが多いと頭がいっぱいになってしまう理由と、整理する方法を紹介します。",
-        date: "2026-07-07",
+        date: "2026-08-05",
         image: "images/post-adhd.png",
         url: "articles/adhd/adhd-007.html",
         published:true
