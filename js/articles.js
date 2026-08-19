@@ -97,7 +97,7 @@ const articles = [
         category: "ADHD",
         title: "「あとでやろう」が 増えてしまうのはなぜ？",
         description: "先延ばしをしてしまう理由と、今日からできる対策を紹介します。",
-        date: "2026-07-06",
+        date: "2026-08-10",
         image: "images/post-adhd.png",
         url: "articles/adhd/adhd-008.html",
         published:true
@@ -107,7 +107,7 @@ const articles = [
         category: "ADHD",
         title: "片付けが苦手なのはなぜ？",
         description: "片付けが苦手な理由と、ADHDの人が続けやすい片付けの工夫を紹介します。",
-        date: "2026-07-05",
+        date: "2026-08-10",
         image: "images/post-adhd.png",
         url: "articles/adhd/adhd-009.html",
         published:true
@@ -117,7 +117,7 @@ const articles = [
         category: "ADHD",
         title: "やることが多すぎて動けない？「頭の中の整理」が苦手なときのトリセツ",
         description: "「やらなきゃ」と思っているのに、なぜか動けないとき、小さなステップで解決する工夫。",
-        date: "2026-07-04",
+        date: "2026-08-10",
         image: "images/post-adhd.png",
         url: "articles/adhd/adhd-010.html",
         published:true
@@ -127,7 +127,7 @@ const articles = [
         category:["学校","ADHD","忘れ物"],
         title: "忘れ物対策 「覚えておく」意外の方法を試してみる",
         description: "忘れない仕組みづくりを試してみる",
-        date: "2026-07-03",
+        date: "2026-08-19",
         image: "images/post-school.png",
         url: "articles/adhd/adhd-011.html",
         published:true
@@ -137,7 +137,7 @@ const articles = [
         category:["ADHD","生活"],
         title: "時間が足りないのはなぜ？「時間感覚」のトリセツ",
         description: "体感時間は人それぞれ。アイテムを活用して「間に合わない」を解決",
-        date: "2026-07-02",
+        date: "2026-08-19",
         image: "images/post-adhd.png",
         url: "articles/adhd/adhd-012.html",
         published:true
@@ -147,7 +147,7 @@ const articles = [
         category:["ADHD","生活","勉強","集中できない"],
         title: "集中できない？「集中力を作る環境」のトリセツ",
         description: "自分の集中しやすい環境を知る",
-        date: "2026-07-01",
+        date: "2026-08-19",
         image: "images/post-adhd.png",
         url: "articles/adhd/adhd-013.html",
         published:true
