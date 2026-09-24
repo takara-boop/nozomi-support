@@ -16,16 +16,13 @@ if (menuButton && drawerMenu) {
 const newsList = document.getElementById("newsList");
 
 if (newsList && typeof articles !== "undefined") {
-    // 既存の静的コンテンツをクリア
     newsList.innerHTML = "";
 
-    // 公開中の記事だけを取得し、日付の新しい順に並べる
     const latestArticles = articles
         .filter(item => item.published === true)
         .sort((a, b) => new Date(b.date) - new Date(a.date))
         .slice(0, 3);
 
-    // 最新3件をカードとして表示
     latestArticles.forEach(item => {
         const card = document.createElement("a");
         card.href = item.url;
