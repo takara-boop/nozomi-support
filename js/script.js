@@ -11,21 +11,26 @@ if (menuButton && drawerMenu) {
 }
 
 // =========================
-// New Articles (デザイン再現用の動的カード生成)
+// New Articles（最新3件を動的生成）
 // =========================
 const newsList = document.getElementById("newsList");
 
 if (newsList && typeof articles !== "undefined") {
-    // 既存の静的コンテンツがある場合は一度クリアする
+    // 既存の静的コンテンツをクリア
     newsList.innerHTML = "";
 
-    // 最新の3件を取得してループ処理
-    articles.slice(0, 3).forEach(item => {
+    // 公開中の記事だけを取得し、日付の新しい順に並べる
+    const latestArticles = articles
+        .filter(item => item.published === true)
+        .sort((a, b) => new Date(b.date) - new Date(a.date))
+        .slice(0, 3);
+
+    // 最新3件をカードとして表示
+    latestArticles.forEach(item => {
         const card = document.createElement("a");
         card.href = item.url;
         card.className = "post-card";
 
-        // 各記事のオブジェクト内にある image プロパティを利用する
         const imgPath = item.image || "images/default.png";
 
         card.innerHTML = `
@@ -61,61 +66,84 @@ if (drawerMenu) {
 // Search・検索窓
 // =========================
 document.addEventListener('DOMContentLoaded', () => {
-    const searchInput = document.getElementById('searchInput');
-    const searchBtn = document.getElementById('searchBtn');
-    const searchResults = document.getElementById('searchResults');
 
-    if (!searchInput || !searchBtn) return;
+    const searchInput = document.getElementById("searchInput");
+    const searchBtn = document.getElementById("searchBtn");
+    const searchResults = document.getElementById("searchResults");
 
-    // 検索処理を実行する関数
-    const performSearch = () => {
-        const keyword = searchInput.value.trim().toLowerCase(); 
+    if (!searchInput || !searchBtn || !searchResults) return;
+
+    function performSearch() {
+
+        const keyword = searchInput.value.trim().toLowerCase();
         searchResults.innerHTML = "";
 
         if (keyword === "") {
-            searchResults.innerHTML = "<p style='color: #666;'>キーワードを入力してください。</p>";
+            searchResults.innerHTML = "<p>キーワードを入力してください。</p>";
             return;
         }
 
-        // articles.js で定義された `articles` 配列を正しく参照します
         const filteredArticles = articles.filter(item => {
-            const titleMatch = item.title && item.title.toLowerCase().includes(keyword);
-            const descMatch = item.description && item.description.toLowerCase().includes(keyword);
-            const catMatch = item.category && item.category.toLowerCase().includes(keyword);
-            return titleMatch || descMatch || catMatch;
+
+            const title =
+                (item.title || "").toLowerCase();
+
+            const description =
+                (item.description || "").toLowerCase();
+
+            // category が配列でも文字列でも対応
+            const category =
+                Array.isArray(item.category)
+                    ? item.category.join(" ").toLowerCase()
+                    : (item.category || "").toLowerCase();
+
+            return (
+                title.includes(keyword) ||
+                description.includes(keyword) ||
+                category.includes(keyword)
+            );
+
         });
 
-        if (filteredArticles.length > 0) {
-            const ul = document.createElement('ul');
-            ul.style.listStyle = "none";
-            ul.style.padding = "0";
-
-            filteredArticles.forEach(item => {
-                const li = document.createElement('li');
-                li.style.padding = "10px 0";
-                li.style.borderBottom = "1px dashed #ccc";
-                li.innerHTML = `
-                    <a href="${item.url}" style="text-decoration: none; color: #333; font-weight: bold;">
-                        ${item.title}
-                    </a>
-                    <div style="font-size: 12px; color: #888; margin-top: 5px;">
-                        <span style="background-color: #f0f0f0; padding: 2px 6px; border-radius: 4px; margin-right: 8px;">${item.category}</span>
-                        ${item.description}
-                    </div>
-                `;
-                ul.appendChild(li);
-            });
-            searchResults.appendChild(ul);
-        } else {
-            searchResults.innerHTML = "<p style='color: #666;'>該当する記事が見つかりませんでした。</p>";
+        if (filteredArticles.length === 0) {
+            searchResults.innerHTML =
+                "<p>該当する記事が見つかりませんでした。</p>";
+            return;
         }
-    };
 
-    searchInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') performSearch();
+        const ul = document.createElement("ul");
+        ul.className = "search-result-list";
+
+        filteredArticles.forEach(item => {
+
+            const li = document.createElement("li");
+
+           li.innerHTML = `
+           <a href="${item.url}" class="search-result-link">
+            <span class="search-result-title">${item.title}</span>
+            </a>
+             <span class="search-divider">｜</span>
+              <span class="search-result-description">
+              ${item.description}
+              </span>
+              `;
+
+            ul.appendChild(li);
+
+        });
+
+        searchResults.appendChild(ul);
+
+    }
+
+    searchBtn.addEventListener("click", performSearch);
+
+    searchInput.addEventListener("keydown", function(e) {
+        if (e.key === "Enter") {
+            performSearch();
+        }
     });
 
-    searchBtn.addEventListener('click', performSearch);
 });
 
 // =========================
