@@ -321,7 +321,7 @@ const articles = [
         image: "images/post-adhd.png",
         url: "articles/adhd/adhd-030.html",
         published:true
-    }
+    },
     {
         id: "asd-001",
         category: ["ASD"],
@@ -331,7 +331,7 @@ const articles = [
         image: "images/post-asd.png",
         url: "articles/asd/asd-001.html",
         published:true
-    }
+    },
     {
         id: "asd-002",
         category: ["ASD"],
@@ -341,7 +341,7 @@ const articles = [
         image: "images/post-asd.png",
         url: "articles/asd/asd-002.html",
         published:true
-    }
+    },
     {
         id: "asd-003",
         category: ["ASD,ADHD,学校"],
@@ -351,7 +351,7 @@ const articles = [
         image: "images/post-asd.png",
         url: "articles/asd/asd-003.html",
         published:true
-    }
+    },
     {
         id: "asd-004",
         category: ["ASD"],
@@ -361,7 +361,7 @@ const articles = [
         image: "images/post-asd.png",
         url: "articles/asd/asd-004.html",
         published:true
-    }
+    },
     {
         id: "asd-005",
         category: ["ASD"],
