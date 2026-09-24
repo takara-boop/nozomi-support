@@ -257,70 +257,120 @@ const articles = [
         category: ["学校","生活"],
         title: "困っていても言えない？「お願いする力」をつける",
         description: "上手にSOSを出すためのコミュニケーション",
-        date: "2026-06-20",
+        date: "2026-09-24",
         image: "images/post-school.png",
         url: "articles/adhd/adhd-024.html",
-        published:false
+        published:true
     },
     {
         id: "adhd-025",
         category: "ADHD",
         title: "注意されるとつらい？「失敗から立ち直る」トリセツ",
         description: "叱られたときのショックを和らげる考え方",
-        date: "2026-06-19",
+        date: "2026-09-24",
         image: "images/post-adhd.png",
         url: "articles/adhd/adhd-025.html",
-        published:false
+        published:true
     },
     {
         id: "adhd-026",
         category:["学校","ASD"],
         title: "みんなと同じが苦しい？「自分のペース」のトリセツ",
         description: "周囲と比べずに自分らしく過ごす方法",
-        date: "2026-06-18",
+        date: "2026-09-24",
         image: "images/post-school.png",
         url: "articles/adhd/adhd-026.html",
-        published:false
+        published:true
     },
     {
         id: "adhd-027",
         category:["学校","ASD"],
         title: "学校のルールが苦しい？「集団生活」のトリセツ",
         description: "学校生活での息抜きのコツ",
-        date: "2026-06-17",
+        date: "2026-09-24",
         image: "images/post-school.png",
         url: "articles/adhd/adhd-027.html",
-        published:false
+        published:true
     },
     {
         id: "adhd-028",
         category:["ADHD","ASD","集中できない"],
         title: "音が気になる？「感覚とうまく付き合う」トリセツ",
         description: "音や光の刺激への対策とリフレッシュ法",
-        date: "2026-06-16",
+        date: "2026-09-24",
         image: "images/post-adhd.png",
         url: "articles/adhd/adhd-028.html",
-        published:false
+        published:true
     },
     {
         id: "adhd-029",
         category: ["ADHD","生活","朝起きられない","生活リズム"],
         title: "朝起きられないあなたのトリセツ",
         description: "「早く寝たのに起きられない…」そんな朝が続くあなたへ",
-        date: "2026-07-26",
+        date: "2026-09-24",
         image: "images/post-adhd.png",
         url: "articles/adhd/adhd-029.html",
-        published:false
+        published:true
     },
     {
         id: "adhd-030",
-        category: "ADHD",
+        category: ["ADHD"],
         title: "困った時は相談していい。「助けを借りる力」のトリセツ",
         description: "一人で抱え込まずに周りを頼る方法",
-        date: "2026-06-14",
+        date: "2026-09-24",
         image: "images/post-adhd.png",
         url: "articles/adhd/adhd-030.html",
-        published:false
+        published:true
+    }
+    {
+        id: "asd-001",
+        category: ["ASD"],
+        title: "ASDってどんな特性？",
+        description: "「変わっている」ではなく、感じ方や考え方の違いを知ろう。",
+        date: "2026-09-24",
+        image: "images/post-asd.png",
+        url: "articles/asd/asd-001.html",
+        published:true
+    }
+    {
+        id: "asd-002",
+        category: ["ASD"],
+        title: "どうして冗談や遠回しな言い方が分かりにくいの？",
+        description: "言葉の受け取り方の違いを知ると、自分も相手も理解しやすくなる。",
+        date: "2026-09-24",
+        image: "images/post-asd.png",
+        url: "articles/asd/asd-002.html",
+        published:true
+    }
+    {
+        id: "asd-003",
+        category: ["ASD,ADHD,学校"],
+        title: "予定が変わるだけで疲れてしまうのはなぜ？",
+        description: "急な変更で疲れてしまう理由と、自分を守るための工夫を紹介します。",
+        date: "2026-09-24",
+        image: "images/post-asd.png",
+        url: "articles/asd/asd-003.html",
+        published:true
+    }
+    {
+        id: "asd-004",
+        category: ["ASD"],
+        title: "好きなことに夢中になるのは才能？こだわりとの付き合い方",
+        description: "「こだわり」は短所だけじゃない。自分らしい活かし方を見つけよう。",
+        date: "2026-09-24",
+        image: "images/post-asd.png",
+        url: "articles/asd/asd-004.html",
+        published:true
+    }
+    {
+        id: "asd-005",
+        category: ["ASD"],
+        title: "一人が落ち着くのは悪いこと？",
+        description: "無理に合わせなくても大丈夫。自分に合った人との距離感を考えよう。",
+        date: "2026-09-24",
+        image: "images/post-asd.png",
+        url: "articles/asd/asd-005.html",
+        published:true
     }
 ];
 
